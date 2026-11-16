@@ -1,0 +1,216 @@
+Experiment 12: Socket Programming (TCP and UDP) – Viva Questions and Answers
+Basic Networking Questions
+1. What is socket programming?
+Socket programming is a method of communication between two computers or processes over a network.
+
+2. What is a socket?
+A socket is an endpoint used for sending and receiving data over a network.
+
+3. What is a client?
+A client is a program that requests services from a server.
+
+4. What is a server?
+A server is a program that provides services or responds to client requests.
+
+5. What is the full form of TCP?
+Transmission Control Protocol.
+
+6. What is the full form of UDP?
+User Datagram Protocol.
+
+7. What is an IP address?
+An IP address is a logical address used to identify a device on a network.
+
+8. What is a port number?
+A port number identifies a particular application or service running on a device.
+
+9. What is localhost?
+Localhost refers to the same computer. Its IPv4 loopback address is 127.0.0.1.
+
+10. What is the difference between IP address and port number?
+An IP address identifies a device, whereas a port number identifies an application or service on that device.
+
+
+TCP Questions
+11. What is TCP?
+TCP is a connection-oriented protocol that provides reliable data transmission.
+
+12. Is TCP connection-oriented or connectionless?
+Connection-oriented.
+
+13. What are the main features of TCP?  
+- Reliable communication.
+- Error checking.
+- Ordered data delivery.
+- Flow control.
+- Retransmission of lost data.
+
+14. What is a three-way handshake?
+It is the process of establishing a TCP connection using three steps:
+1. SYN
+2. SYN-ACK
+3. ACK
+
+15. Why is TCP reliable?
+Because it uses acknowledgments, sequence numbers and retransmissions.
+
+16. What is TCP used for?
+Web browsing, file transfer, email and other applications requiring reliable delivery.
+
+17. Does TCP maintain the order of data?
+Yes, TCP delivers data in the correct order.
+
+
+UDP Questions
+18. What is UDP?
+UDP is a connectionless protocol used for fast data transmission.
+
+19. Is UDP connection-oriented or connectionless?
+Connectionless.
+
+20. What are the main features of UDP?
+- Fast communication.
+- No connection establishment.
+- Low overhead.
+- No guaranteed delivery.
+- No guaranteed ordering.
+
+21. Why is UDP faster than TCP?
+Because it does not establish a connection or use acknowledgments and retransmissions in the same way as TCP.
+
+22. Where is UDP used?
+Online gaming, live streaming, DNS and voice/video communication.
+
+23. Does UDP guarantee data delivery?
+No.
+
+24. Does UDP maintain the order of packets?
+No, UDP does not guarantee packet ordering.
+
+
+TCP vs UDP
+25. What is the difference between TCP and UDP?
+TCP	                    UDP
+Connection-oriented	    Connectionless
+Reliable	            No guaranteed delivery
+Maintains data order	No guaranteed ordering
+Generally slower	    Generally faster
+Uses acknowledgments	No built-in acknowledgments
+SOCK_STREAM	            SOCK_DGRAM
+Used in HTTP/HTTPS	    Used in DNS and online gaming
+
+
+26. Which is faster, TCP or UDP?
+UDP is generally faster.
+
+27. Which is more reliable, TCP or UDP?
+TCP.
+
+28. Which protocol is used for video streaming?
+UDP is commonly used for real-time streaming, although TCP is also used by many streaming services.
+
+29. Which protocol is used for file transfer?
+TCP is commonly used.
+
+
+Python Program-Based Questions
+30. Which programming language is used?
+Python.
+
+31. Which module is used for socket programming?
+The socket module.
+
+32. Is the socket module built into Python?
+Yes.
+
+33. What is AF_INET?
+It specifies IPv4 addressing.
+
+34. What is SOCK_STREAM?
+It specifies a TCP socket.
+
+35. What is SOCK_DGRAM?
+It specifies a UDP socket.
+
+36. What is the purpose of bind()?
+It assigns an IP address and port number to the server socket.
+
+37. What is the purpose of listen()?
+It makes a TCP server wait for incoming connections.
+
+38. What is the purpose of accept()?
+It accepts an incoming TCP client connection.
+
+39. What is the purpose of connect()?
+It establishes a connection with the server.
+
+40. What is the purpose of send()?
+It sends data through a connected socket.
+
+41. What is the purpose of recv()?
+It receives data from a connected socket.
+
+42. What is the purpose of sendto()?
+It sends UDP data to a specified address.
+
+43. What is the purpose of recvfrom()?
+It receives UDP data along with the sender's address.
+
+44. What is the purpose of close()?
+It closes the socket connection.
+
+45. What is the purpose of encode()?
+It converts a string into bytes for transmission.
+
+46. What is the purpose of decode()?
+It converts received bytes into a readable string.
+
+47. Why do we use port 5000 and 5001 in our programs?
+They are port numbers selected for our TCP and UDP communication examples.
+
+48. What does 1024 represent in recv(1024)?
+It specifies the maximum number of bytes to receive in that call.
+
+Practical Questions
+49. Why should we start the server before the client?
+Because the server must be ready to accept or receive the client's message.
+
+50. What happens if the server is not running?
+The TCP client cannot establish a connection. A UDP message may be sent, but no server will respond.
+
+51. What is the difference between send() and sendto()?
+send() sends data through a connected socket, whereas sendto() sends data to a specified destination address.
+
+52. What is the difference between recv() and recvfrom()?
+recv() receives data, whereas recvfrom() receives data along with the sender's address.
+
+53. What is the purpose of using localhost?
+It allows client-server communication on the same computer.
+
+54. Can client and server run on different computers?
+Yes, if they are connected through a network and the correct server IP and port are used.
+
+55. What happens if the client and server use different port numbers?
+They cannot communicate correctly because they are not using the same destination port.
+
+Top 15 Questions to Prepare First
+No.	Question	Short Answer
+1	What is socket programming?	Communication between processes over a network.
+2	What is TCP?	Transmission Control Protocol.
+3	What is UDP?	User Datagram Protocol.
+4	What is a socket?	Communication endpoint.
+5	What is a port number?	Identifies an application or service.
+6	What is localhost?	Same computer (127.0.0.1).
+7	What is TCP?	Connection-oriented.
+8	What is UDP?	Connectionless.
+9	Which is faster?	UDP.
+10	Which is reliable?	TCP.
+11	What is AF_INET?	IPv4 addressing.
+12	What is SOCK_STREAM?	TCP socket.
+13	What is SOCK_DGRAM?	UDP socket.
+14	What is bind()?	Assigns address and port.
+15	What is accept()?	Accepts TCP connection.
+
+
+One-line explanation for the examiner
+"Socket programming is used to establish communication between a client and server. TCP provides reliable and connection-oriented communication, whereas UDP provides faster, connectionless communication without guaranteed delivery."

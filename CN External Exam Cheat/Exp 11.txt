@@ -1,0 +1,170 @@
+Experiment 11: Dijkstra's Shortest Path Algorithm – Viva Questions and Answers
+Basic Questions
+1. What is Dijkstra's Algorithm?
+Dijkstra's Algorithm is used to find the shortest path from a source vertex to all other vertices in a weighted graph.
+
+2. Who developed Dijkstra's Algorithm?
+Edsger W. Dijkstra.
+
+3. What is the purpose of Dijkstra's Algorithm?
+To find the minimum distance between nodes in a network.
+
+4. Where is Dijkstra's Algorithm used?
+It is used in computer networks, GPS navigation and route planning.
+
+5. Which routing protocol uses Dijkstra's Algorithm?
+OSPF (Open Shortest Path First).
+
+6. What is a graph?
+A graph is a collection of vertices and edges.
+
+7. What is a vertex?
+A vertex is a node in a graph.
+
+8. What is an edge?
+An edge is a connection between two vertices.
+
+9. What is edge weight?
+Edge weight represents the cost, distance or time required to travel between two vertices.
+
+10. What is a source vertex?
+The source vertex is the starting node from which shortest distances are calculated.
+
+Technical Questions
+11. What is a shortest path?
+It is the path having the minimum total weight between two vertices.
+
+12. What is a weighted graph?
+A graph in which every edge has an associated weight or cost.
+
+13. What is a visited array?
+It stores whether a vertex has already been processed.
+
+14. What is the purpose of the distance array?
+It stores the shortest known distance from the source to each vertex.
+
+15. Why is the initial distance set to infinity?
+Because initially, the distances to other vertices are unknown.
+
+16. Why is the source distance initialized to zero?
+Because the distance from the source vertex to itself is zero.
+
+17. Does Dijkstra's Algorithm work with negative weights?
+No, it requires non-negative edge weights.
+
+18. What is a greedy algorithm?
+A greedy algorithm selects the locally best option at each step.
+
+19. What is relaxation in Dijkstra's Algorithm?
+Relaxation means updating a vertex's distance if a shorter path is found.
+
+20. What is the time complexity of Dijkstra's Algorithm?  
+- Using an adjacency matrix: \(O(V^2)\)
+- Using a priority queue and adjacency list: \(O((V+E)\log V)\)
+Here, V = vertices and E = edges.
+
+
+Networking Questions
+21. What is routing?
+Routing is the process of selecting a path for data packets to travel from source to destination.
+
+22. What is a router?
+A router is a networking device that forwards data packets between networks.
+
+23. What is OSPF?
+OSPF stands for Open Shortest Path First. It is a link-state routing protocol.
+
+24. What is link-state routing?
+It is a routing method in which routers share information about network links to calculate shortest paths.
+
+25. What is the difference between static and dynamic routing?
+Static routing is configured manually, whereas dynamic routing automatically updates routes using routing protocols.
+
+26. What is the difference between Dijkstra and Bellman-Ford?
+Dijkstra	                            Bellman-Ford
+Greedy algorithm	                    Dynamic programming-based algorithm
+Does not support negative edge weights	Supports negative edge weights
+Generally faster	                    Generally slower
+Used by OSPF	                        Related to distance-vector routing calculations
+
+
+27. What happens if there is no connection between two vertices?
+The destination is considered unreachable if no path exists.
+
+Python Program-Based Questions
+28. Which programming language is used?
+Python.
+
+29. What is the purpose of the graph variable?
+It stores the graph in the form of a cost matrix.
+
+30. What is a cost matrix?
+It represents the weights or costs between vertices.
+
+31. What does float('inf') mean?
+It represents infinity.
+
+32. What is the purpose of visited = [False] * n?
+It initializes all vertices as unvisited.
+
+33. What does dist[source] = 0 do?
+It sets the distance of the source vertex to zero.
+
+34. What is the purpose of min_dist?
+It stores the smallest distance among unvisited vertices.
+
+35. What does visited[u] = True do?
+It marks vertex u as visited.
+
+36. What does graph[u][v] represent?
+It represents the weight of the edge between vertices u and v.
+
+37. What does dist[u] + graph[u][v] calculate?
+It calculates a possible new distance to vertex v through vertex u.
+
+38. What does dist[v] = dist[u] + graph[u][v] do?
+It updates the shortest known distance to vertex v.
+
+39. Why do we use -1 in the cost matrix?
+In this program, -1 represents no direct connection between two vertices.
+
+40. What is the final output of the program?
+The shortest distances from the source vertex to all reachable vertices.
+
+
+Practical Calculation Questions
+Consider this graph:
+0 --4-- 1
+|       |
+1       2
+|       |
+2 --8-- 3
+
+41. If the source vertex is 0, what is the distance to vertex 2?
+1.
+
+42. What is the shortest distance from vertex 0 to vertex 1?
+3 (through vertex 2).
+
+43. What is the shortest distance from vertex 0 to vertex 3?
+8 (through vertices 2 and 1).
+
+44. What happens if the source and destination are the same?
+The shortest distance is zero.
+
+45. Can Dijkstra find the shortest paths to multiple destinations?
+Yes, it calculates shortest distances from one source to all reachable vertices.
+Top 10 Questions to Prepare First
+1. What is Dijkstra's Algorithm?
+2. Who developed it?
+3. What is a graph?
+4. What is a vertex and edge?
+5. What is edge weight?
+6. What is a source vertex?
+7. Why do we initialize distance with infinity?
+8. Why does Dijkstra not support negative weights?
+9. Which routing protocol uses Dijkstra's Algorithm?
+10. What is the time complexity?
+
+One-line explanation for the examiner
+"Dijkstra's Algorithm is a greedy shortest-path routing algorithm used to calculate the minimum distance from a source node to all other reachable nodes in a weighted network."

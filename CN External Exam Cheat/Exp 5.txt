@@ -1,0 +1,109 @@
+How does the program work?
+Suppose the input is:
+ABFCEFG
+
+- A and B are normal characters, so they are copied directly.
+- F is a flag character, so E is inserted before it.
+- C is copied directly.
+- E is an escape character, so another E is inserted before it.
+- F is a flag character, so E is inserted before it.
+- G is copied directly.
+
+Final output:
+ABEFCEEFG
+
+Experiment 5: Character Stuffing – Viva Questions and Answers
+Basic Questions
+Q1. What is framing?
+Framing is the process of dividing a continuous stream of data into smaller units called frames.
+
+Q2. What is character stuffing?
+Character stuffing is a framing technique in which an extra escape character is inserted before special characters in the data.
+
+Q3. Why is character stuffing used?
+To distinguish data characters from special frame delimiter characters.
+
+Q4. Which layer of the OSI model performs framing?
+Data Link Layer (Layer 2).
+
+Q5. What is a flag character?
+A special character used to indicate the beginning or end of a frame.
+
+Q6. What is an escape character?
+A special character inserted before a flag or escape character appearing in the data.
+
+Q7. What is destuffing?
+The process of removing the extra escape characters at the receiver to recover the original data.
+
+Conceptual Questions
+Q8. What is the difference between bit stuffing and character stuffing?
+Bit Stuffing	                                Character Stuffing
+Works with bits.	                             Works with characters or bytes.
+Inserts an extra bit.	                         Inserts an escape character.
+Inserts 0 after five consecutive 1s in HDLC.	 Inserts ESC before special characters.
+
+
+Q9. What happens if the data contains a flag character?
+An escape character is inserted before the flag character.
+
+Q10. What happens if the data contains an escape character?
+Another escape character is inserted before it.
+
+Q11. What is the purpose of a frame?
+A frame carries data in a structured format for transmission over a network.
+
+Q12. What is the full form of ESC?
+Escape Character.
+
+Q13. What is the full form of FLAG?
+FLAG is a frame delimiter; it is not an abbreviation.
+
+Program-Based Questions
+Q14. Which programming language is used in your program?
+Python.
+
+Q15. What does input() do?
+It accepts input from the user.
+
+Q16. What is the purpose of the for loop?
+It checks every character in the input string.
+
+Q17. What does stuffed = "" mean?
+It creates an empty string to store the stuffed data.
+
+Q18. What does stuffed += ch do?
+It adds the current character to the stuffed string.
+
+Q19. What is the purpose of the if condition?
+It checks whether the current character is a FLAG or ESC character.
+
+Q20. Why do we use stuffed += ESC?
+To insert an escape character before a special character.
+
+Important Practical Questions
+Q21. What will be the output if the input is ABC?
+Output: ABC, because it contains no special characters.
+
+Q22. What will be the output if the input is ABF?
+Output: ABEF.
+
+Q23. What will be the output if the input is ABE?
+Output: ABEE.
+
+Q24. Is character stuffing performed at the sender or receiver?
+Stuffing is performed at the sender, and destuffing is performed at the receiver.
+
+Q25. What is the main advantage of character stuffing?
+It ensures that special frame delimiter characters in the data are not mistaken for actual frame boundaries.
+Most Important Questions to Remember
+If you have limited time, prepare these seven questions first:
+1. What is framing?
+2. What is character stuffing?
+3. Why is character stuffing required?
+4. What is a flag character?
+5. What is an escape character?
+6. What is destuffing?
+7. Difference between bit stuffing and character stuffing.
+One-line explanation to tell the examiner:
+
+"Character stuffing is a framing technique in which an escape character is inserted before special flag or escape characters present in the data to avoid confusion with frame boundaries."

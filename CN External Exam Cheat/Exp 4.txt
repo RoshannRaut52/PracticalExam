@@ -1,0 +1,89 @@
+Basic Questions
+1. What is framing?
+Framing is the process of dividing a continuous stream of data into smaller units called frames.
+
+2. What is Bit Stuffing?
+Bit Stuffing is a framing technique in which an extra 0 is inserted after every five consecutive 1s.
+
+3. Why is Bit Stuffing used?
+It prevents data from being confused with special frame delimiter patterns.
+
+4. At which layer is framing performed?
+Data Link Layer (Layer 2) of the OSI model.
+
+5. What is the OSI model?
+OSI stands for Open Systems Interconnection. It is a seven-layer reference model used to understand network communication.
+
+Conceptual Questions
+6. What is Bit Destuffing?
+Bit Destuffing is the process of removing the extra 0 bits inserted during bit stuffing.
+7. Which protocol uses Bit Stuffing?
+HDLC (High-Level Data Link Control).
+
+8. What is a frame?
+A frame is a unit of data at the Data Link Layer.
+
+9. What is a flag in framing?
+A flag is a special bit pattern used to identify the beginning and end of a frame.
+
+10. What is the flag pattern used in HDLC?
+01111110
+
+11. Why is zero inserted after five consecutive ones?
+To ensure that the flag pattern is not accidentally created inside the data.
+
+12. What happens if the receiver does not perform bit destuffing?
+The receiver may interpret the extra stuffed bits as actual data, resulting in incorrect data recovery.
+
+Python Programming Questions
+13. Why do we use count = 0?
+To count consecutive occurrences of 1.
+
+14. What is the purpose of the for loop?
+It checks every bit of the input data one by one.
+
+15. What does stuffed += bit mean?
+It adds the current bit to the stuffed string.
+
+16. Why do we use if bit == '1'?
+To check whether the current bit is 1.
+
+17. Why do we reset the counter when the bit is 0?
+Because consecutive 1s are interrupted by a 0.
+
+18. Why is the extra 0 inserted after five consecutive 1s?
+To avoid accidental formation of the HDLC flag pattern.
+
+19. What is the difference between = and == in Python?
+= is an assignment operator.
+== is a comparison operator.
+
+20. What is a string in Python?
+A string is a sequence of characters enclosed in single or double quotation marks.
+
+
+Bit Stuffing vs Character Stuffing
+Bit Stuffing	                                Character Stuffing
+Works with binary bits.	                        Works with characters.
+Inserts an extra 0 after five consecutive 1s.	Inserts an escape character before special characters.
+Used in bit-oriented protocols such as HDLC.	Used in character-oriented framing methods.
+
+
+Bit Stuffing vs Bit Destuffing
+Bit Stuffing	                     Bit Destuffing
+Performed at the sender.	         Performed at the receiver.
+Inserts extra 0 bits.	             Removes extra stuffed 0 bits.
+Helps maintain frame transparency.	 Recovers the original data.
+
+
+5. Important Points to Remember for the External Exam
+1. Bit Stuffing is a framing technique.
+2. It is performed at the Data Link Layer.
+3. An extra 0 is inserted after five consecutive 1s.
+4. HDLC uses Bit Stuffing.
+5. HDLC flag pattern is 01111110.
+6. The receiver performs Bit Destuffing.
+7. The purpose is to prevent data from being mistaken for a frame delimiter.
+Most important viva question: Why do we insert 0 after five consecutive 1s?
+
+Answer: We insert 0 to prevent the data from accidentally forming the HDLC flag pattern 01111110, which identifies frame boundaries.

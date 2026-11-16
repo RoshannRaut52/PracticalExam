@@ -1,0 +1,312 @@
+Practical Implementation: Network Packet Capturing and Analysis Using Wireshark
+Follow these steps during your practical examination.
+Step 1: Open Wireshark
+1. Open the Wireshark application.
+2. You will see available network interfaces, such as Wi-Fi and Ethernet.
+3. Select your active internet connection (Wi-Fi or Ethernet).
+4. Double-click the interface to start capturing packets.
+
+
+Step 2: Generate Network Traffic
+While Wireshark is capturing packets:
+1. Open Command Prompt.
+2. Execute:
+ping google.com
+
+3. You will see packets appearing in Wireshark.
+4. Return to Wireshark.
+
+
+Step 3: Analyse DNS Packets
+1. Enter this filter in the display filter bar:
+dns
+
+2. Open another CMD window and execute:
+nslookup google.com
+
+3. Observe the DNS packets in Wireshark.
+4. Click a DNS packet to see its query and response details.
+Explain: DNS converts domain names into IP addresses.
+
+
+Step 4: Analyse TCP Packets
+1. Enter the following filter:
+tcp
+
+2. Open a website or establish a TCP connection.
+3. Observe TCP packets.
+4. Look for these three flags:
+   - SYN
+   - SYN-ACK
+   - ACK
+Explain: These three steps establish a TCP connection. This process is called the TCP Three-Way Handshake.
+
+
+Step 5: Analyse ICMP Packets
+1. Enter the filter:
+icmp
+
+2. Execute in CMD:
+ping google.com
+
+3. Observe ICMP Echo Request and Echo Reply packets.
+Explain: ICMP is used for network diagnostics and error reporting. The ping command uses ICMP.
+
+
+Step 6: Analyse Packet Details
+1. Select any packet from the packet list.
+2. In the middle pane, expand the following sections:
+   - Frame
+   - Ethernet II
+   - Internet Protocol (IP)
+   - Transmission Control Protocol (TCP) or User Datagram Protocol (UDP)
+3. Observe source address, destination address, protocol, and packet length.
+
+
+Step 7: Follow TCP Stream
+1. Select any TCP packet.
+2. Right-click on it.
+3. Select Follow → TCP Stream.
+4. A new window will display the communication between the client and server.
+
+
+Step 8: View Protocol Hierarchy
+1. Click the Statistics menu.
+2. Select Protocol Hierarchy.
+3. Observe the different protocols and their packet counts.
+
+
+Step 9: Stop and Save Capture
+1. Click the red Stop button.
+2. Click File → Save As.
+3. Enter a filename.
+4. Save the file with the .pcapng extension.
+Important Filters to Remember
+Filter	Purpose
+dns	Displays DNS packets
+tcp	Displays TCP packets
+udp	Displays UDP packets
+icmp	Displays ICMP packets
+http	Displays HTTP packets
+ip.addr == 192.168.1.10	Displays packets involving a particular IP
+tcp.port == 80	Displays TCP packets using port 80
+
+
+Note: If http does not show packets, use tcp or dns. Most modern websites use HTTPS, so their HTTP application data is encrypted.
+
+
+
+
+
+Experiment 2: Network Packet Capturing and Analysis Tool (Wireshark) – Viva Questions
+Here are 50 important viva questions with simple answers for your Computer Networks external practical.
+A. Basic Wireshark Concepts
+1. What is Wireshark?
+Wireshark is a network protocol analyzer used to capture and analyze network packets.
+
+2. What is packet capturing?
+Packet capturing is the process of collecting network packets travelling through a network interface.
+
+3. Why do we use Wireshark?
+We use Wireshark to monitor network traffic, troubleshoot network problems and analyze communication between devices.
+
+4. Is Wireshark free?
+Yes, Wireshark is free and open-source software.
+
+5. Which operating systems support Wireshark?
+Windows, Linux and macOS.
+
+6. What is a network packet?
+A network packet is a formatted unit of data transmitted over a network.
+
+7. What is a protocol?
+A protocol is a set of rules that controls communication between network devices.
+
+8. What is a network interface?
+A network interface is a connection point through which a device communicates with a network, such as Wi-Fi or Ethernet.
+
+9. What is Npcap?
+Npcap is a packet-capturing library used by Wireshark on Windows to capture network traffic.
+
+10. What is the difference between Wireshark and Npcap?
+Wireshark	                     Npcap
+Network protocol analyzer	      Packet-capturing library
+Analyzes captured packets	      Helps capture packets
+Provides a graphical interface	Works in the background
+
+
+B. Packet Capturing and Analysis
+11. What is a packet capture file?
+It is a file that stores captured network packets for later analysis.
+
+12. What is the extension of a Wireshark capture file?
+.pcapng is the default modern Wireshark capture format. .pcap is another commonly used format.
+
+13. What are the three main sections of Wireshark?  
+- Packet List Pane
+- Packet Details Pane
+- Packet Bytes Pane
+
+14. What is the Packet List Pane?
+It displays the captured packets in a tabular format.
+
+15. What is the Packet Details Pane?
+It displays detailed information about the selected packet, including its protocols and fields.
+
+16. What is the Packet Bytes Pane?
+It displays the raw packet data in hexadecimal and ASCII formats.
+
+17. What is a packet source?
+It is the device or network address from which a packet originates.
+
+18. What is a destination address?
+It identifies the device to which a packet is being sent.
+
+19. What is a packet header?
+A packet header contains control information such as source address, destination address and protocol information.
+
+20. What is packet payload?
+Payload is the actual data carried inside a packet.
+
+
+C. Wireshark Filters
+21. What is a filter in Wireshark?
+A filter is used to display only the packets that match specified conditions.
+
+22. What are the types of filters in Wireshark?
+Capture filters and Display filters.
+
+23. What is a capture filter?
+It filters packets before or during capture, so only matching packets are captured.
+
+24. What is a display filter?
+It filters the packets displayed after they have been captured. It does not delete other captured packets.
+
+25. What is the difference between capture and display filters?
+Capture Filter	            Display Filter
+Applied during capture	   Applied after capture
+Limits packets captured	   Limits packets displayed
+Uses capture-filter syntax	Uses Wireshark display-filter syntax
+Example: port 80	         Example: tcp.port == 80
+
+
+26. Which filter is used to display DNS packets?
+dns
+
+27. Which filter is used to display ICMP packets?
+icmp
+
+28. Which filter is used to display TCP packets?
+tcp
+
+29. Which filter is used to display UDP packets?
+udp
+
+30. Which filter is used to display packets from a particular IP address?
+ip.addr == 192.168.1.10
+
+31. Which filter is used to display HTTP packets?
+http
+
+32. Which filter is used to display packets of a particular port?
+For example, tcp.port == 80.
+
+
+D. Network Protocols
+33. What is TCP?
+TCP stands for Transmission Control Protocol. It provides reliable and connection-oriented data transmission.
+
+34. What is UDP?
+UDP stands for User Datagram Protocol. It provides connectionless communication without guaranteed delivery.
+
+35. What is DNS?
+DNS stands for Domain Name System. It converts domain names into IP addresses.
+
+36. What is HTTP?
+HTTP stands for Hypertext Transfer Protocol. It is used to transfer web pages and related data.
+
+37. What is HTTPS?
+HTTPS stands for Hypertext Transfer Protocol Secure. It provides encrypted communication between a browser and a web server.
+
+38. What is ICMP?
+ICMP stands for Internet Control Message Protocol. It is used for network error reporting and diagnostics.
+
+39. What is the TCP three-way handshake?
+It is the process used to establish a TCP connection.
+
+The three steps are:
+1. SYN – Client requests a connection.
+2. SYN-ACK – Server acknowledges the request.
+3. ACK – Client acknowledges the server.
+40. What is the difference between TCP and UDP?
+TCP	                  UDP
+Connection-oriented	   Connectionless
+Reliable	               No guaranteed delivery
+Uses acknowledgements	No transport-level acknowledgements
+Generally slower	      Generally faster
+
+
+E. Practical-Based Questions
+41. How do you start packet capturing in Wireshark?
+Open Wireshark, select an active network interface such as Wi-Fi or Ethernet, and click Start.
+
+42. How do you stop packet capturing?
+Click the red Stop button on the toolbar.
+
+43. How do you generate network traffic for capturing?
+Execute commands such as ping google.com or nslookup google.com in CMD.
+
+44. How do you capture DNS packets?
+Start capturing packets and execute nslookup google.com. Then apply the display filter dns.
+
+45. How do you capture ICMP packets?
+Execute ping google.com and apply the display filter icmp.
+
+46. How do you analyze a TCP packet?
+Select a TCP packet and expand the Transmission Control Protocol section in the Packet Details Pane.
+
+47. What is Follow TCP Stream?
+It displays the TCP communication between two endpoints as a reconstructed data stream.
+
+48. What is Protocol Hierarchy in Wireshark?
+It displays the protocols found in the captured traffic along with their packet and byte statistics.
+
+49. Why can't we easily read HTTPS data in Wireshark?
+HTTPS encrypts application data, so the actual content is generally not readable without the required decryption information.
+
+50. What is the main objective of this experiment?
+To capture network packets using Wireshark, analyze different protocols and understand how data travels through a network.
+Most Important Wireshark Filters
+Purpose	Display Filter
+DNS packets	dns
+ICMP packets	icmp
+TCP packets	tcp
+UDP packets	udp
+HTTP packets	http
+HTTPS/TLS packets	tls
+Specific IP address	ip.addr == 192.168.1.10
+Specific TCP port	tcp.port == 80
+Source IP	ip.src == 192.168.1.10
+Destination IP	ip.dst == 192.168.1.10
+
+
+Top 15 Questions to Prepare First
+1. What is Wireshark?
+2. What is packet capturing?
+3. What is Npcap?
+4. What is a network protocol?
+5. What are the three panes of Wireshark?
+6. What is the difference between capture and display filters?
+7. What is a packet header?
+8. What is packet payload?
+9. What is TCP?
+10. What is UDP?
+11. What is DNS?
+12. What is the TCP three-way handshake?
+13. What is Follow TCP Stream?
+14. What is Protocol Hierarchy?
+15. Why is HTTPS data encrypted?
+One-minute explanation for the examiner
+"This experiment demonstrates packet capturing and analysis using Wireshark. First, we select an active network interface and start capturing packets. We generate network traffic using commands like ping and nslookup. Then, we apply display filters such as DNS, ICMP, TCP and UDP to identify specific packets. We can inspect packet details, source and destination addresses, protocols and payload information. Wireshark helps us understand network communication and troubleshoot network problems."
+
+Practical tip: Be prepared to demonstrate these three things: capture DNS packets, capture ICMP packets using ping, and identify the TCP three-way handshake.

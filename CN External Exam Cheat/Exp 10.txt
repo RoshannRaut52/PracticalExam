@@ -1,0 +1,180 @@
+Experiment 10: IP Address, MAC Address and Subnetting – Viva Questions
+Basic Questions
+1. What is an IP address?
+An IP address is a unique logical address assigned to a device on a network.
+
+2. What is the full form of IP?
+Internet Protocol.
+
+3. What is a MAC address?
+A MAC address is a hardware address assigned to a network interface.
+
+4. What is the full form of MAC?
+Media Access Control.
+
+5. What is the difference between IP address and MAC address?
+IP Address	                                MAC Address
+Logical address	                            Physical address
+Used at Network Layer	                    Used at Data Link Layer
+Can change	                                Usually fixed by manufacturer
+Identifies a network interface logically	Identifies a network interface at the link layer
+
+
+6. What is IPv4?
+IPv4 stands for Internet Protocol Version 4. It uses a 32-bit address.
+
+7. What is IPv6?
+IPv6 stands for Internet Protocol Version 6. It uses a 128-bit address.
+
+8. How many bits are present in an IPv4 address?
+32 bits.
+
+9. How many bits are present in an IPv6 address?
+128 bits.
+
+10. What is a subnet mask?
+A subnet mask separates the network portion and host portion of an IP address.
+
+
+Subnetting Questions
+11. What is subnetting?
+Subnetting is the process of dividing a large network into smaller networks.
+
+12. What is a network address?
+It identifies a particular network.
+
+13. What is a broadcast address?
+It is used to send data to all devices in a particular network.
+
+14. What is the first usable IP address?
+It is generally the network address plus one.
+
+15. What is the last usable IP address?
+It is generally the broadcast address minus one.
+
+16. What is the default subnet mask of Class A?
+255.0.0.0
+
+17. What is the default subnet mask of Class B?
+255.255.0.0
+
+18. What is the default subnet mask of Class C?
+255.255.255.0
+
+19. What is CIDR?
+CIDR stands for Classless Inter-Domain Routing. It represents an IP network using a prefix length, such as /24.
+
+20. What does /24 mean?
+It means that the first 24 bits represent the network portion of the IP address.
+
+
+Important Networking Questions
+21. What is a default gateway?
+A default gateway is a router that forwards data from a local network to other networks.
+
+22. What is DHCP?
+DHCP stands for Dynamic Host Configuration Protocol. It automatically assigns IP addresses to devices.
+
+23. What is DNS?
+DNS stands for Domain Name System. It converts domain names into IP addresses.
+
+24. What is a private IP address?
+A private IP address is used within a local network and is not directly routable over the public internet.
+
+25. Give examples of private IP addresses.  
+- 10.0.0.1
+- 172.16.0.1
+- 192.168.1.1
+
+26. What is a public IP address?
+A public IP address is used to identify a network or device on the internet.
+
+27. What is localhost?
+127.0.0.1 is the IPv4 loopback address used to refer to the local computer.
+
+28. Which command is used to find the IP and MAC addresses in Windows?
+ipconfig /all
+
+29. Where can you find the MAC address in the command output?
+Under the Physical Address field.
+
+30. Can we calculate a MAC address using an IP address?
+No. A MAC address must be obtained from the network interface or network information.
+
+
+Python Program-Based Questions
+31. Which programming language is used?
+Python.
+
+32. Which module is used in this program?
+The ipaddress module.
+
+33. Is the ipaddress module built into Python?
+Yes.
+
+34. What is the purpose of IPv4Network()?
+It creates an IPv4 network object.
+
+35. What does strict=False mean?
+It allows us to enter a host IP address instead of only a network address.
+
+36. What does network.netmask return?
+It returns the subnet mask.
+
+37. What does network.network_address return?
+It returns the network address.
+
+38. What does network.broadcast_address return?
+It returns the broadcast address.
+
+39. What does network.hosts() return?
+It returns the usable host IP addresses in the network.
+
+40. What does hosts[0] represent?
+The first usable IP address.
+
+41. What does hosts[-1] represent?
+The last usable IP address.
+
+
+Practical Calculation Questions
+42. For IP 192.168.1.152 with subnet mask 255.255.255.0, what is the network address?
+192.168.1.0
+
+43. What is its broadcast address?
+192.168.1.255
+
+44. What is its first usable IP address?
+192.168.1.1
+
+45. What is its last usable IP address?
+192.168.1.254
+
+46. How many usable host addresses are available in a /24 network?
+254 usable host addresses.
+
+47. What is the range of a Class C private network?
+192.168.0.0 to 192.168.255.255.
+
+48. What happens if two devices have the same IP address on the same network?
+An IP address conflict may occur, causing communication problems.
+
+49. What is the difference between network address and broadcast address?
+The network address identifies the network, while the broadcast address is used to communicate with all devices in that network.
+
+50. Why do we need subnetting?
+To divide networks, manage IP addresses efficiently and reduce unnecessary network traffic.
+Top 10 Questions to Prepare First
+1. What is an IP address?
+2. What is a MAC address?
+3. Difference between IP and MAC address.
+4. What is a subnet mask?
+5. What is subnetting?
+6. What is a network address?
+7. What is a broadcast address?
+8. What is CIDR?
+9. What is DHCP?
+10. How do you find the MAC address in Windows?
+One-line explanation for the examiner:
+
+"This experiment identifies the IP address, MAC address, subnet mask, network address, broadcast address, and first and last usable IP addresses of a given network."

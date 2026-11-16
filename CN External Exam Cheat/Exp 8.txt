@@ -1,0 +1,128 @@
+Experiment 8: Go-Back-N – Viva Questions and Answers
+Basic Questions
+1. What is Go-Back-N?
+Go-Back-N is a sliding window protocol used for reliable data transmission.
+
+2. What is the purpose of Go-Back-N?
+To transmit multiple frames efficiently and handle lost or damaged frames.
+
+3. Which layer uses Go-Back-N?
+Data Link Layer.
+
+4. What is a sliding window protocol?
+It allows the sender to transmit multiple frames before receiving acknowledgments.
+
+5. What is a frame?
+A frame is a unit of data transmitted at the Data Link Layer.
+
+6. What is ACK?
+ACK stands for Acknowledgment. It confirms successful receipt of data.
+
+7. What is ARQ?
+ARQ stands for Automatic Repeat reQuest. It is used for error control through retransmission.
+
+8. What happens when a frame is lost?
+The sender retransmits the lost frame and all subsequent frames in the current window.
+
+9. Why is it called Go-Back-N?
+Because the sender goes back to the lost frame and retransmits it along with the following frames.
+
+10. What is the main advantage of Go-Back-N?
+It allows multiple frames to be transmitted without waiting for individual acknowledgments.
+
+Technical Questions
+11. What is window size?
+It is the maximum number of frames that can be sent without waiting for acknowledgments.
+
+12. What is a sender window?
+It represents the frames that the sender is currently allowed to transmit.
+
+13. What is a receiver window?
+In Go-Back-N, the receiver window size is 1.
+
+14. Does Go-Back-N use a timer?
+Yes, it uses a timer to detect lost or unacknowledged frames.
+
+15. What happens if an acknowledgment is lost?
+The sender may retransmit frames after a timeout.
+
+16. Can Go-Back-N send multiple frames at once?
+Yes, it can send multiple frames according to the window size.
+
+17. What is cumulative acknowledgment?
+It acknowledges all frames received successfully up to a particular frame.
+
+18. What is the maximum sender window size for an N-bit sequence number?  
+2^N-1
+
+19. What is the difference between Go-Back-N and Stop-and-Wait?
+Go-Back-N sends multiple frames, whereas Stop-and-Wait sends one frame and waits for its acknowledgment.
+
+20. What is the difference between Go-Back-N and Selective Repeat?
+Go-Back-N	                                                Selective Repeat
+Retransmits lost frame and subsequent frames in the window.	Retransmits only lost or damaged frames.
+Receiver window size is 1.	                                Receiver can accept and buffer out-of-order frames.
+Simpler implementation.	                                    More complex implementation.
+
+
+Python Program-Based Questions
+21. Which programming language is used?
+Python.
+
+22. What is the purpose of total_frames?
+It stores the total number of frames to transmit.
+
+23. What is the purpose of window_size?
+It stores the maximum number of frames sent in one window.
+
+24. What is the purpose of lost_frame?
+It specifies which frame should be treated as lost during the simulation.
+
+25. Why do we use a while loop?
+To continue transmitting frames until all frames are sent.
+
+26. What does range() do?
+It generates a sequence of numbers for iteration.
+
+27. What does min() do in this program?
+It selects the smaller value to ensure that the program does not exceed the total number of frames.
+
+28. What happens if the lost frame number is 0?
+It indicates that no frame is lost.
+
+29. What happens when frame 2 is lost and the window size is 3?
+The sender retransmits frame 2 and frame 3.
+
+30. What is the final message displayed by the program?
+"All frames transmitted successfully!"
+
+
+Important Practical Questions
+31. What is the disadvantage of Go-Back-N?
+It retransmits correctly received frames again if they occur after a lost frame in the same window.
+
+32. Why is Go-Back-N more efficient than Stop-and-Wait?
+Because it can transmit multiple frames before waiting for acknowledgments.
+
+33. What is timeout?
+Timeout occurs when an acknowledgment is not received within the specified time.
+
+34. What is retransmission?
+Sending the same frame again when it is lost or damaged.
+
+35. Is Go-Back-N a connection-oriented protocol?
+It is a data-link-layer ARQ mechanism, not a connection-oriented transport protocol like TCP.
+Top 10 Questions to Prepare First
+1. What is Go-Back-N?
+2. What is ARQ?
+3. What is ACK?
+4. What is a sliding window?
+5. What is window size?
+6. What happens when a frame is lost?
+7. What is the receiver window size?
+8. What is cumulative acknowledgment?
+9. Difference between Go-Back-N and Selective Repeat.
+10. Difference between Go-Back-N and Stop-and-Wait.
+One-line explanation for the examiner:
+
+"Go-Back-N is a sliding window protocol in which multiple frames are transmitted, and if a frame is lost, the sender retransmits that frame and all subsequent frames in the current window."

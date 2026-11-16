@@ -1,0 +1,127 @@
+Experiment 7: CRC – Viva Questions and Answers
+Basic Questions
+1. What is CRC?
+CRC stands for Cyclic Redundancy Check.
+
+2. What is the purpose of CRC?
+CRC is used to detect errors during data transmission.
+
+3. Is CRC an error detection or correction method?
+It is an error detection method.
+
+4. Which layer uses CRC?
+Data Link Layer.
+
+5. What is a generator in CRC?
+A generator is a binary number used as a divisor in CRC calculation.
+
+6. What is a CRC remainder?
+It is the remainder obtained after binary division.
+
+7. What is a codeword?
+It is the original data combined with the CRC remainder.
+
+8. What is XOR?
+XOR stands for Exclusive OR. It gives 1 when two input bits are different.
+
+Technical Questions
+9. Why do we append zeros to the data?
+To make space for the CRC remainder.
+
+10. How many zeros are appended?
+One less than the length of the generator.
+
+11. What is modulo-2 division?
+It is binary division performed using XOR instead of subtraction.
+
+12. What does a zero remainder indicate?
+No error is detected.
+
+13. What does a non-zero remainder indicate?
+An error is detected.
+
+14. Can CRC correct errors?
+No, CRC only detects errors.
+
+15. What is a burst error?
+An error in which multiple bits in a sequence are corrupted.
+
+16. Why is CRC better than simple parity checking?
+CRC can detect many more types of errors, including burst errors.
+
+17. What happens at the receiver side?
+The receiver divides the received codeword by the same generator.
+
+18. Can CRC detect all possible errors?
+No, it cannot guarantee detection of every possible error.
+
+Python Program-Based Questions
+19. Which programming language is used?
+Python.
+
+20. What is the purpose of input()?
+It accepts input from the user.
+
+21. What does len(divisor) return?
+It returns the length of the generator.
+
+22. What does data + '0' * (n - 1) do?
+It appends zeros to the original data.
+
+23. Why do we use a for loop?
+To perform binary division step by step.
+
+24. What does int(a) ^ int(b) do?
+It performs XOR between two binary digits.
+
+25. What is the purpose of codeword?
+It stores the original data along with the CRC remainder.
+
+26. Why do we use the same generator at the receiver?
+To check whether the received data contains errors.
+
+27. What does ''.join() do?
+It combines individual characters into a string.
+
+28. What does '1' not in check mean?
+It checks whether the remainder contains no 1s.
+
+Important Comparison Questions
+29. What is the difference between CRC and Hamming Code?
+CRC	                    Hamming Code
+Mainly detects errors.	Detects and corrects single-bit errors.
+Uses binary division.	Uses parity bits.
+Uses XOR operations.	Uses parity checking.
+
+
+30. What is the full form of CRC?
+Cyclic Redundancy Check.
+
+31. What is the full form of XOR?
+Exclusive OR.
+
+32. What is the main advantage of CRC?
+It can efficiently detect many common transmission errors.
+
+33. Where is CRC used?
+Ethernet, storage devices, communication protocols and data transmission systems.
+
+34. What happens if the received data is corrupted?
+The receiver may get a non-zero remainder and identify an error.
+
+35. Who corrects the data if CRC detects an error?
+Usually, a retransmission mechanism such as ARQ requests the sender to send the data again.
+Top 10 Questions to Prepare First
+1. What is CRC?
+2. What is the full form of CRC?
+3. Why is CRC used?
+4. What is a generator?
+5. What is XOR?
+6. What is modulo-2 division?
+7. Why are zeros appended?
+8. What is a CRC remainder?
+9. What does zero remainder indicate?
+10. Difference between CRC and Hamming Code.
+One-line explanation for the examiner:
+
+"CRC is an error-detection technique that uses XOR-based binary division to calculate extra bits and detect errors during data transmission."

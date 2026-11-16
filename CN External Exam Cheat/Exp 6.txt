@@ -1,0 +1,130 @@
+Experiment 6: Hamming Code – Viva Questions and Answers
+Basic Concepts
+1. What is Hamming Code?
+Hamming Code is an error-control technique used to detect and correct errors in transmitted data.
+
+2. Who invented Hamming Code?
+Richard Hamming.
+
+3. Why is Hamming Code used?
+It is used to detect and correct single-bit errors during data transmission.
+
+4. What is an error in data communication?
+An error occurs when the received data differs from the transmitted data.
+
+5. What is a parity bit?
+A parity bit is an extra bit added to data to help detect errors.
+
+6. What are the types of parity?
+Even parity and odd parity.
+
+7. What is even parity?
+The total number of 1s, including the parity bit, must be even.
+
+8. What is odd parity?
+The total number of 1s, including the parity bit, must be odd.
+
+9. What is the difference between error detection and error correction?
+Error detection identifies whether an error has occurred. Error correction identifies and corrects the error.
+
+10. How many bits can basic Hamming Code correct?
+It can correct one-bit errors.
+
+Technical Questions
+11. What is the formula for calculating parity bits?  
+
+2^r >= m+r+1
+
+Where:
+- r = Number of parity bits
+- m = Number of data bits
+
+12. Where are parity bits placed?
+At positions 1, 2, 4, 8, 16, and so on.
+
+13. Why are parity bits placed at powers of 2?
+This helps identify the position of an erroneous bit using binary position values.
+
+14. What is a syndrome?
+A syndrome is the result obtained after checking parity bits. It helps identify the error position.
+
+15. What does a zero syndrome indicate?
+It indicates that no error has been detected.
+
+16. Can Hamming Code correct multiple-bit errors?
+Basic Hamming Code cannot reliably correct multiple-bit errors.
+
+17. What is XOR?
+XOR is a logical operation that returns 1 when the two input bits are different.
+
+18. What is the Data Link Layer's role in error control?
+It provides mechanisms for detecting and handling transmission errors.
+
+Program-Based Questions
+19. Which programming language is used in this experiment?
+Python.
+
+20. What is the purpose of the encode() function?
+It generates the Hamming Code by inserting and calculating parity bits.
+
+21. What is the purpose of the decode() function?
+It checks for errors, corrects a single-bit error, and extracts the original data.
+
+22. What does 2 ** r mean in Python?
+It calculates 2 raised to the power of r.
+
+23. What does parity ^= code[j] mean?
+It performs an XOR operation and updates the parity value.
+
+24. What does code[error] ^= 1 do?
+It flips the erroneous bit from 0 to 1 or from 1 to 0.
+
+25. Why do we use an array in this program?
+To store data bits and parity bits at their respective positions.
+
+26. What does error position 0 indicate in the program?
+It means no error is intentionally introduced.
+
+27. How many parity bits are required for 4 data bits?
+Three parity bits.
+
+28. What are the parity bit positions for 4 data bits?
+Positions 1, 2, and 4.
+
+Important Practical Questions
+29. What happens if an error occurs at position 5?
+The syndrome identifies position 5, and the program flips that bit to correct it.
+
+30. What is the advantage of Hamming Code?
+It can automatically detect and correct single-bit errors without retransmitting the entire data.
+
+31. What is the limitation of Hamming Code?
+Basic Hamming Code cannot reliably correct multiple-bit errors.
+
+32. What is the difference between Hamming Code and CRC?
+Hamming Code can correct single-bit errors, whereas CRC is mainly used for error detection.
+
+33. What is transmission?
+Transmission is the process of sending data from one device to another.
+
+34. What is received data?
+Received data is the information that reaches the destination device.
+
+35. What is the full form of Hamming Code?
+Hamming Code is named after Richard Hamming; it does not have a full form.
+
+Most Important Questions to Prepare First
+If you have limited time, focus on these:
+1. What is Hamming Code?
+2. Why is it used?
+3. What is a parity bit?
+4. Explain even and odd parity.
+5. What is the formula for calculating parity bits?
+6. Why are parity bits placed at positions 1, 2, 4, 8?
+7. What is a syndrome?
+8. How does Hamming Code correct an error?
+9. What is XOR?
+10. Difference between Hamming Code and CRC?
+One-line explanation for the examiner:
+
+"Hamming Code is an error-control technique that uses additional parity bits to detect and correct single-bit errors during data transmission."

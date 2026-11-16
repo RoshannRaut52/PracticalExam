@@ -1,0 +1,128 @@
+Experiment 9: Selective Repeat – Viva Questions and Answers
+Basic Questions
+1. What is Selective Repeat?
+Selective Repeat is a sliding window protocol used for reliable data transmission.
+
+2. What is the purpose of Selective Repeat?
+To transmit data efficiently and retransmit only lost or damaged frames.
+
+3. Which layer uses Selective Repeat?
+Data Link Layer.
+
+4. What is a sliding window protocol?
+It allows multiple frames to be transmitted before receiving acknowledgments.
+
+5. What is a frame?
+A frame is a unit of data transmitted at the Data Link Layer.
+
+6. What is ACK?
+ACK stands for Acknowledgment. It confirms successful receipt of a frame.
+
+7. What is ARQ?
+ARQ stands for Automatic Repeat reQuest. It is used for error control through retransmission.
+
+8. What happens when a frame is lost?
+Only the lost frame is retransmitted.
+
+9. Why is it called Selective Repeat?
+Because the sender selectively retransmits only the frames that are lost or damaged.
+
+10. What is the main advantage of Selective Repeat?
+It avoids unnecessary retransmission of correctly received frames.
+
+Technical Questions
+11. What is window size?
+It is the maximum number of frames that can be sent without waiting for acknowledgments.
+
+12. What is a sender window?
+It represents the frames that the sender is currently allowed to transmit.
+
+13. What is a receiver window?
+It represents the frames that the receiver can accept and buffer.
+
+14. Does Selective Repeat use a timer?
+Yes, it uses individual timers for outstanding frames.
+
+15. Can Selective Repeat accept out-of-order frames?
+Yes, it can accept and temporarily store out-of-order frames.
+
+16. What is buffering?
+Buffering means temporarily storing received data before processing or delivering it.
+
+17. What happens if an acknowledgment is lost?
+The sender may retransmit the frame after a timeout.
+
+18. What is the maximum window size for an N-bit sequence number? 
+2^{N-1}
+
+19. What is the difference between Go-Back-N and Selective Repeat?
+Go-Back-N	                                                    Selective Repeat
+Retransmits the lost frame and subsequent frames in the window.	Retransmits only the lost frame.
+Receiver window size is 1.	                                    Receiver can accept multiple frames.
+Does not buffer out-of-order frames.	                        Buffers out-of-order frames.
+Less complex.	                                                More complex.
+
+
+20. What is the difference between Stop-and-Wait and Selective Repeat?
+Stop-and-Wait sends one frame at a time, whereas Selective Repeat allows multiple frames to be sent.
+
+Python Program-Based Questions
+21. Which programming language is used?
+Python.
+
+22. What is the purpose of total_frames?
+It stores the total number of frames to transmit.
+
+23. What is the purpose of window_size?
+It stores the maximum number of frames sent in one window.
+
+24. What is the purpose of lost_frame?
+It specifies which frame should be treated as lost during the simulation.
+
+25. Why do we use a while loop?
+To continue transmitting frames until all frames are processed.
+
+26. What does range() do?
+It generates a sequence of numbers for iteration.
+
+27. What does min() do in the program?
+It selects the smaller value to avoid exceeding the total number of frames.
+
+28. What happens if the lost frame number is 0?
+It indicates that no frame is lost.
+
+29. If frame 2 is lost and the window size is 3, which frame is retransmitted?
+Only frame 2 is retransmitted.
+
+30. What is the final message displayed by the program?
+"All frames transmitted successfully!"
+
+Important Practical Questions
+31. What is the disadvantage of Selective Repeat?
+It requires more memory and is more complex to implement.
+
+32. Why is Selective Repeat more efficient than Go-Back-N?
+Because it retransmits only lost or damaged frames.
+
+33. What is timeout?
+Timeout occurs when an acknowledgment is not received within the specified time.
+
+34. What is retransmission?
+Sending a frame again when it is lost or damaged.
+
+35. Why does Selective Repeat require buffering?
+To store correctly received frames that arrive out of order.
+Top 10 Questions to Prepare First
+1. What is Selective Repeat?
+2. What is ARQ?
+3. What is ACK?
+4. What is a sliding window?
+5. What is window size?
+6. What happens when a frame is lost?
+7. What is buffering?
+8. Can Selective Repeat accept out-of-order frames?
+9. Difference between Go-Back-N and Selective Repeat.
+10. What is the advantage of Selective Repeat?
+One-line explanation for the examiner:
+
+"Selective Repeat is a sliding window protocol in which multiple frames are transmitted, and if a frame is lost or damaged, only that particular frame is retransmitted."

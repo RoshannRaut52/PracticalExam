@@ -1,0 +1,430 @@
+Step 1: Open Command Prompt
+1. Press Windows + R.
+2. Type cmd.
+3. Press Enter.
+4. The Command Prompt window will open.
+Execute the following commands one by one.
+1. ipconfig
+Purpose: Displays the basic IP configuration of the computer.
+
+Command:
+ipconfig
+
+Explanation:
+
+This command displays the IP address, subnet mask, and default gateway of the network adapters.
+
+Important terms:
+- IP (Internet Protocol): A protocol used to identify devices and transfer data across networks.
+- IPv4 (Internet Protocol Version 4): A 32-bit IP addressing system.
+- IPv6 (Internet Protocol Version 6): A 128-bit IP addressing system.
+- Subnet Mask: Identifies the network portion and host portion of an IP address.
+- Default Gateway: A router or device that forwards data from the local network to other networks.
+Expected Output: Displays the network adapter's IPv4 address, subnet mask, and default gateway.
+
+
+2. ipconfig /all
+Purpose: Displays detailed network configuration information.
+
+Command:
+ipconfig /all
+
+Explanation:
+
+This command displays complete information about all network adapters, including physical address, IP address, DNS server, and DHCP details.
+
+Important terms:
+- MAC (Media Access Control) Address: A hardware address assigned to a network interface.
+- DHCP (Dynamic Host Configuration Protocol): Automatically assigns IP addresses and other network settings to devices.
+- DNS (Domain Name System): Converts domain names into IP addresses.
+- Physical Address: The MAC address of a network adapter.
+- Lease Obtained: The time when the device received its IP address from the DHCP server.
+- Lease Expires: The time when the assigned IP address lease expires.
+Expected Output: Displays detailed information such as hostname, MAC address, IPv4 address, subnet mask, default gateway, DHCP status, and DNS servers.
+
+
+3. ping google.com
+Purpose: Checks whether a destination computer or server is reachable over a network.
+
+Command:
+ping google.com
+
+Explanation:
+
+The ping command sends ICMP Echo Request packets to the destination and waits for ICMP Echo Reply packets.
+
+If a reply is received, it indicates that the destination is reachable through the network.
+
+Important terms:
+- ICMP (Internet Control Message Protocol): A network-layer protocol used for error reporting and diagnostic purposes.
+- Echo Request: A message sent to check whether a destination is reachable.
+- Echo Reply: A response returned by the destination.
+- RTT (Round-Trip Time): The time taken for a packet to travel to the destination and return.
+- Packet Loss: The percentage of packets that fail to reach the destination or return.
+Expected Output:
+Pinging google.com
+Reply from destination:
+Bytes=32 time=25ms TTL=117
+
+The actual IP address, response time, and TTL may differ.
+
+Additional information:
+- Bytes: Size of the data packet.
+- time: Round-trip time in milliseconds.
+- TTL (Time To Live): A value that limits how long a packet can remain in a network.
+
+
+4. tracert google.com
+Purpose: Displays the route taken by packets to reach a destination.
+
+Command:
+tracert google.com
+
+Explanation:
+
+The tracert command traces the path from the source computer to the destination. It displays the intermediate routers or network devices through which packets travel.
+
+Each intermediate point is called a hop.
+
+Important terms:
+- Trace Route: The process of identifying the path taken by network packets.
+- Hop: One step or router through which a packet travels.
+- Router: A networking device that forwards packets between different networks.
+- Latency: The time taken for data to travel across a network.
+- Timeout: Occurs when a device does not respond within the expected time.
+Expected Output:
+Tracing route to google.com
+
+1    2 ms    1 ms    2 ms    192.168.1.1
+2   10 ms   12 ms   11 ms    ...
+3   20 ms   22 ms   21 ms    ...
+
+The actual number of hops and response times may differ.
+
+Note: Some routers may not respond to traceroute requests. Therefore, a timeout does not always mean the network is disconnected.
+
+
+5. nslookup google.com
+Purpose: Checks DNS resolution and finds the IP address associated with a domain name.
+
+Command:
+nslookup google.com
+
+Explanation:
+
+When we enter a domain name such as google.com, the computer needs its corresponding IP address to communicate with the server.
+
+The nslookup command queries a DNS server to obtain information about the domain name.
+
+Important terms:
+- DNS (Domain Name System): Converts human-readable domain names into IP addresses.
+- DNS Server: A server that stores or provides domain-name-to-IP-address information.
+- Domain Name: A human-readable website address, such as google.com.
+- Name Resolution: The process of converting a domain name into an IP address.
+Expected Output:
+Server:  DNS server name
+Address: DNS server IP
+
+Name:    google.com
+Address: IP address
+
+The actual DNS server and IP address may differ.
+
+
+6. netstat -an
+Purpose: Displays active network connections and listening ports.
+
+Command:
+netstat -an
+
+Explanation:
+
+The netstat command displays information about network connections, including local addresses, foreign addresses, ports, and connection states.
+
+The options used are:
+- -a: Displays all active connections and listening ports.
+- -n: Displays addresses and port numbers in numerical format.
+Important terms:
+- TCP (Transmission Control Protocol): A connection-oriented protocol that provides reliable data transmission.
+- UDP (User Datagram Protocol): A connectionless protocol that provides faster data transmission without guaranteeing delivery.
+- Port Number: A number used to identify a particular application or service running on a device.
+- Local Address: The IP address and port number of the local computer.
+- Foreign Address: The IP address and port number of the remote computer.
+- Listening: Indicates that a device is waiting for incoming network connections.
+- Established: Indicates that a TCP connection has been successfully established.
+Expected Output:
+Proto   Local Address       Foreign Address      State
+TCP     127.0.0.1:5000      0.0.0.0:0            LISTENING
+TCP     192.168.1.5:5001    142.250.x.x:443      ESTABLISHED
+
+Actual output depends on the applications and connections active on your computer.
+
+
+7. telnet example.com 80
+Purpose: Tests whether a TCP connection can be established with a remote server on a particular port.
+
+Command:
+telnet example.com 80
+
+Explanation:
+
+The telnet command attempts to establish a TCP connection with the specified server using port number 80.
+
+If the connection is successful, the screen may become blank. This indicates that the TCP connection has been established.
+
+Important terms:
+- Telnet (Teletype Network): A protocol used for remote text-based communication.
+- TCP (Transmission Control Protocol): A connection-oriented protocol that provides reliable communication.
+- Port 80: The standard port used by HTTP.
+- HTTP (Hypertext Transfer Protocol): A protocol used for transferring web pages and other web resources.
+- Client: A device or application that requests services.
+- Server: A device or application that provides services to clients.
+Expected Output:
+
+If the connection is successful, a blank screen may appear.
+
+If the connection fails, an error message may be displayed.
+
+To exit Telnet:
+1. Press Ctrl + ].
+2. Type quit.
+3. Press Enter.
+Note: If Telnet is not recognized, enable Telnet Client from Windows Features.
+
+
+6. Important Networking Terms and Their Full Forms
+Short Form	Full Form
+IP	Internet Protocol
+IPv4	Internet Protocol Version 4
+IPv6	Internet Protocol Version 6
+MAC	Media Access Control
+DHCP	Dynamic Host Configuration Protocol
+DNS	Domain Name System
+ICMP	Internet Control Message Protocol
+TCP	Transmission Control Protocol
+UDP	User Datagram Protocol
+HTTP	Hypertext Transfer Protocol
+HTTPS	Hypertext Transfer Protocol Secure
+RTT	Round-Trip Time
+TTL	Time To Live
+CMD	Command Prompt
+LAN	Local Area Network
+WAN	Wide Area Network
+ISP	Internet Service Provider
+OSI	Open Systems Interconnection
+URL	Uniform Resource Locator
+NIC	Network Interface Card
+
+
+7. Common Network Port Numbers
+Port Number	Protocol / Service
+20, 21	FTP (File Transfer Protocol)
+22	SSH (Secure Shell)
+23	Telnet
+25	SMTP (Simple Mail Transfer Protocol)
+53	DNS
+80	HTTP
+110	POP3 (Post Office Protocol Version 3)
+143	IMAP (Internet Message Access Protocol)
+443	HTTPS
+
+
+
+
+
+
+
+
+Experiment 1: Network Connectivity Testing Tools / Utilities / Commands – Viva Questions
+Here are 50 important viva questions with simple answers for your Computer Networks external practical.
+A. Basic Networking Concepts
+1. What is a computer network?
+A computer network is a group of interconnected devices that communicate and share data and resources.
+
+2. What is network connectivity?
+Network connectivity means the ability of two or more devices to communicate with each other.
+
+3. What is an IP address?
+An IP address is a logical address assigned to a device to identify it on a network.
+
+4. What are the types of IP addresses?
+IPv4 and IPv6.
+
+5. What is IPv4?
+IPv4 is a 32-bit IP addressing system, usually written in four decimal numbers separated by dots. Example: 192.168.1.1.
+
+6. What is IPv6?
+IPv6 is a 128-bit IP addressing system developed to provide a much larger number of IP addresses.
+
+7. What is a MAC address?
+A MAC address is a physical address assigned to a network interface card (NIC).
+
+8. What is the difference between IP address and MAC address?
+IP Address	                    MAC Address
+Logical address	                Physical address
+Used for network communication	Used for communication within a local network
+Can change	                    Generally fixed to the network interface
+
+
+9. What is a LAN?
+LAN stands for Local Area Network. It connects devices within a limited geographical area, such as a college or office.
+
+10. What is a WAN?
+WAN stands for Wide Area Network. It connects networks over large geographical areas.
+
+
+B. Network Connectivity Commands
+11. What is the purpose of the ipconfig command?
+It displays the basic IP configuration of the computer.
+
+12. What is the difference between ipconfig and ipconfig /all?  
+- ipconfig: Displays basic IP configuration.
+- ipconfig /all: Displays detailed information, including MAC address, DNS, DHCP and other network details.
+
+13. What is the purpose of the ping command?
+It checks whether a destination device is reachable over an IP network.
+
+14. Which protocol does the ping command use?
+ICMP (Internet Control Message Protocol).
+
+15. What is ICMP?
+ICMP is a network-layer protocol used for error reporting and network diagnostics.
+
+16. What is RTT?
+RTT stands for Round-Trip Time. It is the time taken for a packet to travel to the destination and for the reply to return.
+
+17. What does Request Timed Out mean?
+It means a response was not received within the expected time. This may happen due to network problems or firewall restrictions.
+
+18. What is the purpose of ping google.com -n 10?
+It sends 10 ping requests to Google and displays the connectivity results.
+
+19. What is the purpose of the tracert command?
+It shows the path taken by packets to reach a destination, including intermediate routers.
+
+20. Which protocol does tracert use in Windows?
+It primarily uses ICMP Echo Requests with increasing TTL values.
+
+21. What is TTL?
+TTL stands for Time To Live. It limits how many router hops a packet can travel before being discarded.
+
+22. What is the purpose of the nslookup command?
+It queries DNS servers to find information about a domain name, such as its corresponding IP address.
+
+23. What is DNS?
+DNS stands for Domain Name System. It translates domain names into IP addresses.
+
+24. What is the purpose of the netstat -an command?
+It displays active network connections and listening ports using numerical IP addresses and port numbers.
+
+25. What is a port number?
+A port number is a logical number used to identify a particular application or service running on a device.
+
+26. What is the purpose of the telnet command?
+Telnet can be used to test TCP connectivity to a particular host and port.
+
+27. Which port does HTTP use by default?
+Port 80.
+
+28. Which port does HTTPS use by default?
+Port 443.
+
+29. Which port does DNS use by default?
+Port 53.
+
+30. Which port does Telnet use by default?
+Port 23.
+
+
+C. Important Networking Concepts
+31. What is a router?
+A router is a networking device that connects different networks and forwards packets between them.
+
+32. What is a default gateway?
+A default gateway is the device, usually a router, through which a computer communicates with other networks.
+
+33. What is DHCP?
+DHCP stands for Dynamic Host Configuration Protocol. It automatically assigns IP configuration to devices.
+
+34. What is the difference between TCP and UDP?
+TCP	                    UDP
+Connection-oriented	    Connectionless
+Reliable communication	No guaranteed delivery
+Uses acknowledgements	Does not use acknowledgements at the transport protocol level
+Comparatively slower	Generally faster
+
+
+35. What is a firewall?
+A firewall is a security system that monitors and controls incoming and outgoing network traffic.
+
+36. What is a network adapter?
+A network adapter is a hardware or software component that allows a computer to connect to a network.
+
+37. What is localhost?
+Localhost refers to the current computer. Its IPv4 loopback address is 127.0.0.1.
+
+38. What is packet loss?
+Packet loss occurs when data packets fail to reach their destination.
+
+39. What is bandwidth?
+Bandwidth is the maximum data-carrying capacity of a network connection per unit of time.
+
+40. What is latency?
+Latency is the time taken for data to travel from one point to another.
+
+
+D. Practical and Command-Based Questions
+41. Which command displays the MAC address?
+ipconfig /all — check the Physical Address field.
+
+42. How do you check whether your computer has an internet connection?
+Use ping google.com.
+
+43. How do you check the IP address of your computer?
+Use ipconfig.
+
+44. How do you find the IP address of a domain name?
+Use nslookup google.com.
+
+45. How do you check the route to a website?
+Use tracert google.com.
+
+46. How do you check active network connections?
+Use netstat -an.
+
+47. How do you test whether a particular TCP port is accessible?
+Use Telnet, for example: telnet example.com 80.
+
+48. What happens if the internet is disconnected?
+Commands such as ipconfig and netstat can still work locally, but commands requiring remote communication may fail.
+
+49. What is the difference between ping and tracert?
+Ping	                        Tracert
+Checks destination reachability	Shows the route to the destination
+Displays response time	        Displays intermediate network hops
+Uses ICMP	                    Uses TTL-based probing
+
+
+50. Why do we perform this experiment?
+To understand and use networking commands to check IP configuration, test connectivity, troubleshoot network problems and analyze network communication.
+Most Important Questions – Prepare These First
+If you have limited preparation time, focus on these 15:
+1. What is an IP address?
+2. What is a MAC address?
+3. What is DNS?
+4. What is DHCP?
+5. What is ICMP?
+6. What is the use of ipconfig?
+7. What is the use of ping?
+8. What is the use of tracert?
+9. What is the use of nslookup?
+10. What is the use of netstat?
+11. What is TTL?
+12. What is RTT?
+13. Difference between TCP and UDP.
+14. Difference between IP address and MAC address.
+15. What is the default gateway?
+One-minute explanation for the examiner
+"This experiment demonstrates different network connectivity testing commands in Windows. We use ipconfig to check IP configuration, ping to test connectivity, tracert to identify the route, nslookup to resolve domain names, netstat to display active connections, and telnet to test TCP port connectivity. These commands help us understand and troubleshoot network-related problems."
+
+My suggestion: Practise executing all seven commands yourself. In an external practical, the examiner may ask you to execute any one command and explain its output.

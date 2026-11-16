@@ -1,0 +1,342 @@
+Practical Implementation: Measuring Network Performance – Throughput and Delay
+Follow these steps during your practical examination.
+Step 1: Open Command Prompt
+1. Press Windows + R.
+2. Type cmd and press Enter.
+3. Open Command Prompt.
+Step 2: Measure Network Delay Using Ping
+Execute the following command:
+ping google.com -n 10
+
+Explanation:
+- ping: Checks network connectivity.
+- google.com: Destination server.
+- -n 10: Sends 10 packets.
+- time: Displays the round-trip time for each packet.
+- ms: Milliseconds, the unit used to measure time.
+Observe the output:
+Packets: Sent = 10, Received = 10, Lost = 0
+Minimum = 20ms, Maximum = 35ms, Average = 27ms
+
+Your actual values may differ.
+
+What to note:
+- Minimum delay
+- Maximum delay
+- Average delay
+- Packet loss percentage
+Important terms:
+- Delay: Time taken by data to travel from source to destination.
+- RTT (Round-Trip Time): Time taken by a packet to reach the destination and for its response to return.
+- Packet Loss: Percentage of packets that fail to reach the destination or return.
+Step 3: Measure Network Throughput
+We will use the curl command to download data and observe the transfer speed.
+
+Execute:
+curl.exe -o NUL https://www.google.com
+
+Explanation:
+- curl: A command-line tool used to transfer data over a network.
+- -o: Specifies the output destination.
+- NUL: Discards the downloaded data instead of saving it as a file.
+- https://www.google.com: Website from which data is downloaded.
+Observe the output:
+100 86810  100 86810
+Average Speed: 44118 bytes/sec
+
+Your actual output may differ.
+Step 4: Calculate Throughput
+Throughput is the amount of data successfully transferred per unit of time.
+
+Formula:
+
+Throughput = Data Transferred / Time Taken
+
+To convert bytes per second into bits per second:
+
+Throughput (bps) = Bytes per second × 8
+
+For example:
+
+If the download speed is 44,118 bytes/sec:
+
+44,118 × 8 = 352,944 bps
+
+Therefore:
+
+Throughput ≈ 353 kbps.
+
+Important terms:
+- Throughput: Actual rate of successful data transfer.
+- bps: Bits per second.
+- Kbps: Kilobits per second.
+- Mbps: Megabits per second.
+- Bandwidth: Maximum theoretical data-carrying capacity of a network.
+- Latency: Delay experienced during data transmission.
+Step 5: Record the Observations
+Prepare an observation table using your actual command output.
+Parameter	Observed Value
+Packets Sent	10
+Packets Received	As displayed by ping
+Packet Loss	As displayed by ping
+Minimum Delay	As displayed by ping
+Maximum Delay	As displayed by ping
+Average Delay	As displayed by ping
+Download Speed	As displayed by curl
+Calculated Throughput	Download speed × 8
+
+
+Step 6: Understand Types of Network Delay
+Network delay consists of four main components:
+1. Transmission Delay: Time required to put all packet bits onto the communication link.
+2. Propagation Delay: Time taken by the signal to travel from source to destination.
+3. Processing Delay: Time required by network devices to process a packet.
+4. Queuing Delay: Time a packet waits in a queue before transmission.
+Total Delay = Transmission Delay + Propagation Delay + Processing Delay + Queuing Delay.
+Important Viva Questions
+Question	Answer
+What is throughput?	Amount of data successfully transferred per unit of time.
+What is delay?	Time taken for data to travel from source to destination.
+What is RTT?	Round-Trip Time.
+What is bandwidth?	Maximum data-carrying capacity of a network.
+What is packet loss?	Percentage of packets that fail to reach their destination or return.
+What is the unit of throughput?	bps, Kbps, Mbps.
+What is the unit of delay?	Milliseconds (ms).
+Which command measures network delay?	ping
+Which command can measure download speed?	curl
+Name four types of delay.	Transmission, propagation, processing, and queuing delay.
+
+
+Important: curl measures the transfer speed of the particular download, not the maximum capacity of your internet connection. For a more accurate throughput measurement, use a larger test file.
+What to demonstrate to the examiner
+1. Execute ping google.com -n 10 and explain delay and packet loss.
+2. Execute curl.exe -o NUL https://www.google.com and observe download speed.
+3. Calculate throughput by multiplying bytes per second by 8.
+4. Explain the four types of network delay.
+
+
+
+
+
+
+
+
+
+Experiment 3: Understand Measures of Network Performance – Throughput and Delay (Viva Questions)
+Here are 50 important viva questions with simple answers for your Computer Networks external practical.
+A. Basic Concepts
+1. What is network performance?
+Network performance refers to how efficiently a network transfers data between devices.
+
+2. What are the important measures of network performance?
+The important measures are:
+- Bandwidth
+- Throughput
+- Delay (Latency)
+- Jitter
+- Packet Loss
+
+3. What is throughput?
+Throughput is the actual amount of data successfully transferred over a network per unit of time.
+
+4. What is the unit of throughput?
+bps (bits per second), Kbps, Mbps or Gbps.
+
+5. What is bandwidth?
+Bandwidth is the maximum data-carrying capacity of a network connection.
+
+6. What is the difference between bandwidth and throughput?
+Bandwidth	                Throughput
+Maximum network capacity	Actual data transfer rate
+Theoretical maximum	        Real-world performance
+Usually higher	            Usually lower
+
+
+7. What is delay?
+Delay is the time taken by data to travel from the source to the destination.
+
+8. What is latency?
+Latency is the time taken for data to travel from one point to another. It is commonly used to describe network delay.
+
+9. What is the unit of delay?
+Milliseconds (ms).
+
+10. What is jitter?
+Jitter is the variation in packet delay over time.
+
+
+B. Types of Network Delay
+11. What are the four main types of network delay?
+1. Transmission delay
+2. Propagation delay
+3. Processing delay
+4. Queuing delay
+12. What is transmission delay?
+It is the time required to push all packet bits onto the transmission link.
+
+Formula:
+Transmission Delay = Packet Size / Bandwidth
+
+13. What is propagation delay?
+It is the time required for a signal to travel from the sender to the receiver through the transmission medium.
+
+14. What is processing delay?
+It is the time taken by a router or device to examine a packet and decide where to forward it.
+
+15. What is queuing delay?
+It is the time a packet waits in a queue before being transmitted.
+
+16. What is the total nodal delay?
+It is the sum of processing, queuing, transmission and propagation delays.
+
+Formula:
+Total Delay = Processing + Queuing + Transmission + Propagation
+
+17. Which delay depends on packet size and bandwidth?
+Transmission delay.
+
+18. Which delay depends on the physical distance between devices?
+Propagation delay.
+
+19. Which delay increases when network traffic is high?
+Queuing delay.
+
+20. Which delay occurs when a router processes a packet?
+Processing delay.
+
+
+C. Throughput and Delay Calculations
+21. How do you calculate throughput?
+Throughput = Total Data Transferred / Total Time
+
+22. If 100 MB of data is transferred in 10 seconds, what is the throughput?
+Throughput = 100 / 10 = 10 MB/s.
+
+23. How do you convert bytes into bits?
+Multiply the number of bytes by 8.
+
+24. What is the difference between Mbps and MBps?
+- Mbps = Megabits per second.
+- MBps = Megabytes per second.
+1 MBps = 8 Mbps (using decimal units).
+
+25. If throughput is 5 MBps, what is it in Mbps?
+5 × 8 = 40 Mbps.
+
+26. What is RTT?
+RTT stands for Round-Trip Time. It is the time taken for a packet to reach the destination and for its response to return.
+
+27. How can we measure RTT?
+Using the ping command.
+
+28. What is packet loss?
+Packet loss occurs when transmitted packets fail to reach their destination.
+
+29. How is packet loss calculated?
+Packet Loss (%) = (Lost Packets / Total Packets Sent) × 100
+
+30. If 10 packets are sent and 2 are lost, what is the packet loss percentage?
+(2 / 10) × 100 = 20%.
+
+
+D. Practical-Based Questions
+31. Which command is used to measure network delay?
+ping google.com
+
+32. Which command can help measure data transfer speed?
+curl can measure the transfer speed of a downloaded resource.
+
+33. What is the purpose of the command ping google.com -n 10?
+It sends 10 ICMP Echo Request packets to Google and displays the response times and packet loss.
+
+34. What does the ping command display?
+It displays:
+- Packets sent
+- Packets received
+- Packets lost
+- Minimum response time
+- Maximum response time
+- Average response time
+
+
+35. What does minimum ping time indicate?
+The shortest recorded round-trip response time.
+
+36. What does maximum ping time indicate?
+The longest recorded round-trip response time.
+
+37. What does average ping time indicate?
+The average round-trip response time of the received replies.
+
+38. What is the purpose of the command curl.exe -o NUL https://www.google.com?
+It downloads the webpage content without saving it to a file and displays transfer statistics, including download speed.
+
+39. Why do we multiply bytes per second by 8?
+Because one byte contains 8 bits, and network speeds are commonly expressed in bits per second.
+
+40. Does high throughput always mean low delay?
+No. Throughput and delay are different performance measures. A network can have high throughput but also high delay.
+
+
+E. Advanced and Conceptual Questions
+41. What factors affect network throughput?
+Bandwidth, network congestion, packet loss, hardware performance and protocol overhead.
+
+42. What factors affect network delay?
+Distance, bandwidth, congestion, packet size, routing and processing time.
+
+43. What is network congestion?
+Network congestion occurs when network traffic becomes too high for available network resources.
+
+44. What is QoS?
+QoS stands for Quality of Service. It refers to techniques used to manage network traffic and provide required performance levels.
+
+45. What is good network performance?
+Good network performance generally means high throughput, low delay, low jitter and minimal packet loss.
+
+46. Why is low latency important in online gaming?
+Low latency reduces the delay between a player's action and the game's response.
+
+47. Why is throughput important in video streaming?
+Higher throughput helps transfer video data smoothly and reduces buffering.
+
+48. What is the difference between one-way delay and RTT?  
+- One-way delay: Time taken for data to travel from source to destination.
+- RTT: Time taken for data to travel to the destination and for a response to return.
+
+
+49. Can packet loss affect throughput?
+Yes. Packet loss can cause retransmissions and reduce the amount of useful data successfully delivered.
+
+50. What is the main objective of this experiment?
+To understand and measure network performance using throughput and delay and analyze how efficiently data is transmitted over a network.
+Important Formulas for Viva
+Parameter	Formula
+Throughput	Data Transferred / Time
+Transmission Delay	Packet Size / Bandwidth
+Total Nodal Delay	Processing + Queuing + Transmission + Propagation
+Packet Loss (%)	(Lost Packets / Sent Packets) × 100
+RTT	Request-to-response time
+Bytes to Bits	Bytes × 8
+
+
+Top 15 Questions to Prepare First
+1. What is throughput?
+2. What is bandwidth?
+3. Difference between throughput and bandwidth?
+4. What is delay?
+5. What is latency?
+6. What are the four types of delay?
+7. What is transmission delay?
+8. What is propagation delay?
+9. What is RTT?
+10. How do you calculate throughput?
+11. What is packet loss?
+12. Which command measures network delay?
+13. Which command can measure download speed?
+14. What is jitter?
+15. What is the difference between Mbps and MBps?
+One-minute explanation for the examiner
+"This experiment helps us understand network performance using two important parameters: throughput and delay. Throughput measures the actual amount of data successfully transferred per second, whereas delay measures the time taken for data to travel through the network. We use the ping command to measure response time and packet loss. We can use curl to observe download speed. By analyzing these values, we can understand the performance and efficiency of a network."
+
+Practical tip: Remember the difference between bandwidth, throughput, latency and RTT. Examiners commonly ask these four terms together.

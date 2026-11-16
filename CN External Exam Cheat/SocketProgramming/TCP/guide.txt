@@ -1,0 +1,16 @@
+How to Execute TCP Programs
+1. Open two terminals.
+2. Run the server first:
+python TCP_Server.py
+
+3. Run the client in another terminal:
+python TCP_Client.py
+
+Sample Output
+Server:
+Server waiting for connection...
+Connected to: ('127.0.0.1', 12345)
+Client: Hello from Client
+
+Client:
+Server: Hello from Server
